@@ -1,68 +1,45 @@
-import {
-  Button,
-  CustomFlowbiteTheme,
-  Flowbite,
-  Label,
-  TextInput,
-  Checkbox,
-} from "flowbite-react";
 import React from "react";
 import { Link } from "react-router-dom";
 
 export const Login = () => {
-  const customTheme: CustomFlowbiteTheme = {
-    button: {
-      color: {
-        primary:
-          "bg-red-500 hover:bg-red-600 text-white transition-all duration-300",
-      },
-    },
-  };
-
   return (
-    <div className="flex items-center justify-center h-screen">
-      <Flowbite theme={{ theme: customTheme }}>
+    <div className="flex items-center justify-center h-screen bg-gray-100">
+      <div className="container mx-auto bg-white p-8 rounded shadow-md">
         <form className="flex max-w-md flex-col gap-4">
           <div>
             <div className="mb-2 block">
-              <Label htmlFor="email2" value="Your email" />
+              <label htmlFor="email2" className="text-gray-600">
+                Your email
+              </label>
             </div>
-            <TextInput
+            <input
               id="email2"
               type="email"
+              className="input input-bordered w-full"
               placeholder="name@flowbite.com"
               required
-              shadow
             />
           </div>
           <div>
             <div className="mb-2 block">
-              <Label htmlFor="password2" value="Your password" />
+              <label htmlFor="password2" className="text-gray-600">
+                Your password
+              </label>
             </div>
-            <TextInput id="password2" type="password" required shadow />
-          </div>
-          <div>
-            <div className="mb-2 block">
-              <Label htmlFor="repeat-password" value="Repeat password" />
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <Checkbox id="agree" />
-            <Label htmlFor="agree" className="flex">
-              I agree with the&nbsp;
-              <Link
-                to="#"
-                className="text-cyan-600 hover:underline dark:text-cyan-500"
-              >
-                terms and conditions
-              </Link>
-            </Label>
+            <input
+              id="password2"
+              type="password"
+              className="input input-bordered w-full"
+              required
+            />
           </div>
           <Link to="/speech">
-            <Button type="submit">Login Your Account</Button>
+            <button type="submit" className="btn btn-primary">
+              login account
+            </button>
           </Link>
         </form>
-      </Flowbite>
+      </div>
     </div>
   );
 };
